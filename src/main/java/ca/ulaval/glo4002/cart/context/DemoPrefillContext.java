@@ -17,13 +17,20 @@ import org.slf4j.LoggerFactory;
 
 class DemoPrefillContext {
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoPrefillContext.class);
-
+    
+    private CartRepository cartRepository;
     private ShopRepository shopRepository;
 
     DemoPrefillContext() {
         this.shopRepository = ServiceLocator.INSTANCE.resolve(ShopRepository.class);
+        this.cartRepository = ServiceLocator.INSTANCe.resolve(CartRepository.class);
     }
+    public void addCart(Cart cart){
+        List<Cart> carts = cartRepository.listCarts();
+        carts.add(cart);
 
+        cartRepository.persistCart(carts);
+    }
     public void apply() {
         LOGGER.debug("Prefilling data in the shop for the demo");
         EntityManagerFactory entityManagerFactory = EntityManagerFactoryProvider.getFactory();
@@ -40,6 +47,7 @@ class DemoPrefillContext {
             addItem(new StandardShopItem("276101", "Imprimante 3D", 2341, 31, 0.60, true));
             addItem(new PrimeShopItem("818113", "GoPro", 650, 1, 4.60, true));
             addItem(new StandardShopItem("51-153", "Peinture à numéro", 1, 2, 1.40, true));
+            addCart(new Cart("blabla@demo.com"));
         } catch (Exception e) {
             LOGGER.debug("Could not prefill DB", e);
         } finally {
