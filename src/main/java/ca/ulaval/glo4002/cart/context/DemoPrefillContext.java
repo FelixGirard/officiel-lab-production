@@ -23,7 +23,7 @@ class DemoPrefillContext {
 
     DemoPrefillContext() {
         this.shopRepository = ServiceLocator.INSTANCE.resolve(ShopRepository.class);
-        this.cartRepository = ServiceLocator.INSTANCe.resolve(CartRepository.class);
+        this.cartRepository = ServiceLocator.INSTANCE.resolve(CartRepository.class);
     }
     public void addCart(Cart cart){
         List<Cart> carts = cartRepository.listCarts();
