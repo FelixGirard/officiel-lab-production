@@ -10,6 +10,8 @@ import ca.ulaval.glo4002.cart.application.jpa.EntityManagerFactoryProvider;
 import ca.ulaval.glo4002.cart.application.jpa.EntityManagerProvider;
 import ca.ulaval.glo4002.cart.domain.shop.PrimeShopItem;
 import ca.ulaval.glo4002.cart.domain.shop.ShopItem;
+import ca.ulaval.glo4002.cart.domain.cart.Cart;
+import ca.ulaval.glo4002.cart.domain.cart.CartRepository;
 import ca.ulaval.glo4002.cart.domain.shop.ShopRepository;
 import ca.ulaval.glo4002.cart.domain.shop.StandardShopItem;
 import org.slf4j.Logger;
