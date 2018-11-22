@@ -23,7 +23,7 @@ public class CartServer implements Runnable {
     private static int PORT;
 
     public static void main(String[] args) {
-        PORT = parseInt(args["port"]);
+        PORT = Integer.parseInt(args["port"]);
         new CartServer().run();
     }
 
