@@ -6,6 +6,8 @@
         </encoder>
     </appender>
 
+    <logger name="org.hibernate.SQL" level="ERROR" />
+    
     <root level="ERROR">
         <appender-ref ref="STDOUT" />
     </root>
