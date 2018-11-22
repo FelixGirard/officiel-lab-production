@@ -31,7 +31,7 @@ class DemoPrefillContext {
         List<Cart> carts = cartRepository.listCarts();
         carts.add(cart);
 
-        cartRepository.persistCart(carts);
+        cartRepository.persistCarts(carts);
     }
     public void apply() {
         LOGGER.debug("Prefilling data in the shop for the demo");
