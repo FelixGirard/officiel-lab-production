@@ -42,6 +42,7 @@ class DemoPrefillContext {
         try {
             entityManager = entityManagerFactory.createEntityManager();
             EntityManagerProvider.setEntityManager(entityManager);
+            entityManager.close();
 
             addItem(new StandardShopItem("1251521", "Peanuts", 5, 1, 1.20, true));
             addItem(new PrimeShopItem("236637", "Clean Code", 35, 2, 0.50, false));
